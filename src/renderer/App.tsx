@@ -36,7 +36,7 @@ const App: React.FC = () => {
         style={{
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'space-between',
+          justifyContent: 'space-between', // Spread the content between left (logo + buttons) and right (profile + coins)
           background: 'linear-gradient(90deg, #FF7043, #FFB74D)', // Gradient for header
           padding: '20px 40px',
           color: '#2C1C00',
@@ -46,10 +46,62 @@ const App: React.FC = () => {
           borderBottom: '3px solid #FFD54F',
         }}
       >
-        {/* Logo on the left */}
-        <img src={logo} alt="Vulcan Logo" style={{ width: 64, marginRight: '20px' }} />
+        {/* Left side: Logo and buttons */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+          <img src={logo} alt="Vulcan Logo" style={{ width: 64, marginRight: '20px' }} />
+          
+          {/* Buttons (Game, Shop, Social) */}
+          <button
+            style={{
+              background: '#FFCC80',
+              border: 'none',
+              borderRadius: '30px',
+              padding: '12px 24px',
+              color: '#2C1C00',
+              fontSize: '16px',
+              cursor: 'pointer',
+              boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
+              transition: 'transform 0.3s, box-shadow 0.3s',
+            }}
+            onClick={() => alert('Games')}
+          >
+            Games
+          </button>
+          <button
+            style={{
+              background: '#FFCC80',
+              border: 'none',
+              borderRadius: '30px',
+              padding: '12px 24px',
+              color: '#2C1C00',
+              fontSize: '16px',
+              cursor: 'pointer',
+              boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
+              transition: 'transform 0.3s, box-shadow 0.3s',
+            }}
+            onClick={() => alert('Shop')}
+          >
+            Shop
+          </button>
+          <button
+            style={{
+              background: '#FFCC80',
+              border: 'none',
+              borderRadius: '30px',
+              padding: '12px 24px',
+              color: '#2C1C00',
+              fontSize: '16px',
+              cursor: 'pointer',
+              boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
+              transition: 'transform 0.3s, box-shadow 0.3s',
+            }}
+            onClick={() => alert('Social')}
+          >
+            Social
+          </button>
+        </div>
 
-        {/* Username and VCoins */}
+        {/* Right side: Profile and VCoins */}
         <div
           style={{
             display: 'flex',
@@ -145,13 +197,29 @@ const App: React.FC = () => {
           background: 'linear-gradient(90deg, #FF7043, #FFB74D)',
           color: '#2C1C00',
           padding: '20px 40px',
-          textAlign: 'center',
+          textAlign: 'left',
           fontSize: '16px',
           marginTop: 'auto',
+          position: 'relative',
+          display: 'flex',
+          justifyContent: 'space-between',
         }}
       >
-        <p>&copy; 2025 Vulcan Interactive Gaming Inc. | All Rights Reserved</p>
-        <p>Follow us on social media!</p>
+        <div style={{ fontSize: '14px' }}>
+          <p style={{ margin: '5px 0' }}>
+            <a href="/about-us" style={{ textDecoration: 'none', color: '#2C1C00' }}>About Us</a>
+          </p>
+          <p style={{ margin: '5px 0' }}>
+            <a href="/contact" style={{ textDecoration: 'none', color: '#2C1C00' }}>Contact</a>
+          </p>
+          <p style={{ margin: '5px 0' }}>
+            <a href="/terms" style={{ textDecoration: 'none', color: '#2C1C00' }}>Terms & Conditions</a>
+          </p>
+        </div>
+
+        <div style={{ fontSize: '14px' }}>
+          <p>&copy; 2025 Vulcan Interactive Gaming Inc. | All Rights Reserved</p>
+        </div>
       </footer>
     </div>
   );
